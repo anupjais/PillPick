@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="kisan_forget_pass.css">
+    <title>Edit Profile</title>
+    <style type="text/css">
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@100;400&family=Poppins:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    /* background: linear-gradient(135deg, #71b7e6, #9b59b6); */
+    background-image: url("https://media.istockphoto.com/id/1500368452/photo/molecular-structure-lights-concept.jpg?s=1024x1024&w=is&k=20&c=1RRjLfn_87BZsmcYUf_VvvsMd6Z6HYdHSLGlMdi5q9Y=");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+    max-width: 700px;
+    height: 700px;
+    width: 100%;
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+    margin-top: 50px;
+}
+
+.container .title {
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+}
+
+.container .title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+
+.container form .user-details {
+    /* display: flex; */
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+
+
+}
+
+form .user-details .input-box {
+    margin-bottom: 17px;
+    width: calc(300% / 2 - 20px);
+}
+
+.user-details .input-box .details {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+    /*margin-top: 20px;*/
+}
+
+.user-details .input-box input {
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+    /*margin-top: 10px;*/
+}
+
+.user-details .input-box input:focus,
+.user-details .input-box input:valid {
+    border-color: #9b59b6;
+}
+
+form .button {
+    height: 45px;
+    margin: 20px 0;
+
+}
+
+form .button input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    color: white;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+
+
+}
+
+form .button input:hover{
+    background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+}
+
+@media(max-width:584px){
+    .container{
+        max-width: 100%;
+    
+    }
+
+    form .user-details .input-box{
+        margin-bottom: 15px;
+        width: 100%;
+    }
+     form .gender-details .category{
+        width: 100%;
+
+     }
+
+     .container form .user-details{
+        max-height: 300px;
+        overflow-y:scroll;
+     }
+
+     .user-details::-webkit-scrollbar{
+        width: 0;
+     }
+}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div style="display: flex;">
+            <div class="title">Edit &nbsp; &nbsp; </div>
+            <div class="title">Profile</div>
+        </div>
+
+        <form action="update" method="post">
+
+            <div class="user-details" style="display: flex;">
+                <div>
+                    <input type="text" name="id" hidden="true" value="<%=user.getUserId()%>" /><br>
+                    <div class="input-box">
+                        <span class="details">First Name</span>
+                        <input type="text" placeholder="Enter your phone" required  value="<%=user.getFirstName()%>" name="fName" >
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Last Name</span>
+                        <input type="text" placeholder="Enter your password" required  name="lName"
+                    value="<%=user.getLastName()%>">
+                    </div>
+    
+                    <div class="input-box">
+                        <span class="details">Email</span>
+                        <input type="text" placeholder="Enter your password" required  name="email" value="<%=user.getEmail()%>">
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Phone</span>
+                        <input type="text" placeholder="Enter your password" required  name="phone" value="<%=user.getPhone()%>">
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Address</span>
+                        <input type="text" placeholder="Enter your password" required  name="address" value="<%=user.getAddress()%>">
+                    </div>
+                </div>
+
+                <div>
+                    <img src="https://i.pinimg.com/736x/b9/97/a5/b997a530822d0f2c03259070d4590d45.jpg"  height="520px" width="300px" style="margin-left: 50px">
+                </div>
+            </div>
+           <div style="display: flex; " >
+            <div class="button" style="margin-right: 50px; width: 100px;">
+                <input type="reset" name="Register" value="Cancel">
+            </div>
+            <div class="button" style="width: 100px;">
+               <a href="login.jsp"> <input type="submit" name="Register" value="Update"></a>
+            </div>
+           </div>
+
+           
+          
+           
+           
+        </form>
+    </div>
+</body>
+
+</html>

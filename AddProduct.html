@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="kisan_registration.css">
+    <title>Add Product</title>
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@100;400&family=Poppins:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    /* background: linear-gradient(135deg, #71b7e6, #9b59b6); */
+    background-image: url("/images/kisan_registration.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+    max-width: 700px;
+    width: 100%;
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+}
+
+.container .title {
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+}
+
+.container .title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+
+.container form .user-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+
+
+}
+
+form .user-details .input-box {
+    margin-bottom: 15px;
+    width: calc(100% / 2 - 20px);
+}
+
+.user-details .input-box .details {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.user-details .input-box input {
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+.user-details .input-box input:focus,
+.user-details .input-box input:valid {
+    border-color: #9b59b6;
+}
+
+form .button {
+    height: 45px;
+    margin: 20px 0;
+}
+
+form .button input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    color: white;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+
+}
+
+form .button input:hover{
+    background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+}
+
+@media(max-width:584px){
+    .container{
+        max-width: 100%;
+    
+    }
+
+    form .user-details .input-box{
+        margin-bottom: 15px;
+        width: 100%;
+    }
+     form .gender-details .category{
+        width: 100%;
+
+     }
+
+     .container form .user-details{
+        max-height: 300px;
+        overflow-y:scroll;
+     }
+
+     .user-details::-webkit-scrollbar{
+        width: 0;
+     }
+}
+.rdobtn{
+    margin-right: 50px;
+    }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div style="display: flex;">
+            <div class="title">Add &nbsp; </div>
+            <div class="title">Product</div>
+        </div>
+
+        <form action="#">
+            <div class="user-details">
+                <div class="input-box" style="width: 700px;">
+                    <span class="details">Product Name</span>
+                    <input type="text" placeholder="Product_Name" id="pname" required name="name">
+                </div>
+                <div class="input-box">
+                    <span class="details">Description</span>
+                    <input type="text" placeholder="Description" required  name="description">
+                </div> 
+               
+                <div class="input-box">
+                    <span class="details">Product Quantity</span>
+                    <input type="text" placeholder="Product_quantity" id="quantity" required name="quantity" >
+                </div>
+                <div class="input-box">
+                    <span class="details">Mfg Date</span>
+                    <input type="date" placeholder="Mfg_Date" id="mfgDate" required name="mgfDate">
+                </div>
+                <div class="input-box" >
+                    <span class="details">Exp Date</span>
+                    <input type="date" placeholder="Exp_Date" id="expDate" required name="expDate">
+                </div>
+                 <div class="input-box" style="width: 700px;">
+                    <span class="details">Price</span>
+                    <input type="text" placeholder="Price" id="price" required name="price">
+                </div>
+                <label for="inputEmail4">Product Type : </label> 
+                <div> 
+                    <input type="radio"  name="productType" value="allopathic" required>
+                    <label class="rdobtn">Allopathic</label>
+                    <input type="radio" name="productType" value="ayurvedic" required>
+                    <label class="rdobtn">Ayurvedic</label>
+                     <input type="radio" name="productType" value="homeopathic" required>
+                    <label class="rdobtn">Homeopathic</label>
+                </div>
+                <input id="userId" name="userId" value="<%=user.getUserId()%>" hidden>
+            </div>
+           <div class="button" style="width: 640px;  ">
+            <input type="submit" name="add" value="Add" style="font-weight: bolder; letter-spacing: 3px;">
+        </div>
+           
+           
+        </form>
+    </div>
+</body>
+
+</html>
