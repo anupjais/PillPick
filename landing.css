@@ -348,6 +348,8 @@ section .main_btn:hover i{
 .menu{
     width: 100%;
     padding: 70px 0;
+    /* border-radius: 15px; */
+
 }
 
 .menu h1{
@@ -387,7 +389,8 @@ section .main_btn:hover i{
     height: 480px;
     padding-top: 10px;
     margin-bottom: 20px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    box-shadow: 0 0 10px lightgray;
+    border-radius: 10px;
 }
 
 .menu .menu_box .menu_card .menu_image{
@@ -905,7 +908,8 @@ section .main_btn:hover i{
 footer{
     width: 100%;
     padding: 30px 0 0 20px;
-    background: #eeeeee;
+    background: #07110b;
+    color: whitesmoke;
 }
 
 footer .footer_main{
@@ -918,7 +922,7 @@ footer .footer_main .footer_tag{
 }
 
 footer .footer_main .footer_tag h2{
-    color: #000;
+    color: #fcfcfc;
     margin-bottom: 25px;
     font-size: 30px;
 }

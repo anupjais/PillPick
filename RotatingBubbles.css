@@ -1,0 +1,30 @@
+body {
+    background: black;
+    margin: 0;
+    overflow: hidden;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.circle {
+    position: absolute;
+    width: 20px; /* initial size */
+    height: 20px; /* initial size */
+    border-radius: 50%;
+    background-color: #ffffff; /* initial color */
+    animation: rotateBubble 10s linear infinite; /* adjust duration as needed */
+}
+
+@keyframes rotateBubble {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
